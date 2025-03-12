@@ -1,5 +1,5 @@
 package com.example.do_an;
-
+//ji
 public class FoodItem {
     private String tittle;
     public String description;
