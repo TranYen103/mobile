@@ -7,12 +7,14 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.do_an.fragments.saveFragment;
 import com.example.do_an.fragments.shareFragment;
+import com.example.do_an.fragments.userFragment;
 
 public class TabAdapter extends FragmentStateAdapter {
 
     public TabAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
+
 
     @NonNull
     @Override

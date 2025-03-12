@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/cf5" />
+                android:src="@drawable/ic_launcher_background" />
 
             <ImageButton
                 android:id="@+id/btnSave"
@@ -45,6 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tên món ăn"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"/>
@@ -54,6 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mô tả ngắn"
+                android:textColor="@color/black"
                 android:layout_marginTop="5dp"/>
         </LinearLayout>
     </LinearLayout>
