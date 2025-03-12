@@ -15,6 +15,7 @@
         android:layout_alignParentBottom="true"
         app:menu="@menu/mnbottom"
         />
+<!--///hhhh-->
 
     <FrameLayout
         android:id="@+id/main_fragment"
