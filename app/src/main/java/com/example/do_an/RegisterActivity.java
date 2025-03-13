@@ -12,6 +12,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import android.util.Patterns;
+
 public class RegisterActivity extends AppCompatActivity {
     private EditText edName, edEmail, edPassword, edConfirmPassword;
     private Button btnRegister;
@@ -45,6 +47,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
             Toast.makeText(RegisterActivity.this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            edEmail.setError("Email không đúng định dạng!");
             return;
         }
         if (password.length() < 6){

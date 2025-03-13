@@ -2,6 +2,7 @@ package com.example.do_an;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -34,10 +35,15 @@ private TextView tvForgotPassword;
         passwordLogin = findViewById(R.id.Password_User);
         btnLogin = findViewById(R.id.btn_Login);
         btn_Register = findViewById(R.id.btn_Register);
+        tvForgotPassword = findViewById(R.id.QuenMatKhau);
 
         firebase_Auth = FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(v -> LoginUser());
+        tvForgotPassword.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+            startActivity(intent);
+        });
         btn_Register.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
@@ -46,21 +52,29 @@ private TextView tvForgotPassword;
     private void LoginUser(){
         String email = emailLogin.getText().toString().trim();
         String password = passwordLogin.getText().toString().trim();
-//        if (email.isEmpty()){
-//            Toast.makeText(LoginActivity.this, "Vui lòng nhập email", Toast.LENGTH_SHORT).show();
-//        } else if (password.isEmpty())  Toast.makeText(LoginActivity.this, "Vui lòng nhập mật khẩu", Toast.LENGTH_SHORT).show();
 
-        if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Vui lòng nhập email và mật khẩu!", Toast.LENGTH_SHORT).show();
-            return;
+        boolean hasError = false;
+        if (email.isEmpty()) {
+            emailLogin.setError("Vui lòng nhập email");
+            hasError = true;
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailLogin.setError("Email không đúng định dạng!");
+            hasError = true;
         }
+        if (password.isEmpty()) {
+            passwordLogin.setError("Vui lòng nhập password");
+            hasError = true;
+        }
+        if (hasError) return;
+
 
         firebase_Auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, task -> {
            if (task.isSuccessful()){
                Toast.makeText(LoginActivity.this, "Đăng nhập thành công.", Toast.LENGTH_SHORT).show();
-               startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//               startActivity(new Intent(LoginActivity.this, MainActivity.class));
                finish();
            } else Toast.makeText(LoginActivity.this, "Đăng nhập thất bại: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
         });
     }
+
 }
