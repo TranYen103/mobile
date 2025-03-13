@@ -8,7 +8,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="210dp"
         android:layout_height="190dp"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="16dp"
+        >
 
         <ImageView
             android:id="@+id/popular_ga"
@@ -16,7 +18,8 @@
             android:layout_height="match_parent"
             android:foreground="?android:attr/selectableItemBackground"
             android:scaleType="centerCrop"
-            android:src="@drawable/gaxao" />
+            android:src="@drawable/gaxao"
+            />
 
         <ImageView
             android:id="@+id/gradient"
@@ -48,7 +51,5 @@
             android:text="⏳ 20ph"
             android:textColor="@color/white"
             android:textSize="14sp" />
-
-
     </androidx.cardview.widget.CardView>
 </LinearLayout>
