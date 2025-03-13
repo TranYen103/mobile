@@ -17,8 +17,10 @@ import com.example.do_an.fragments.saveFragment;
 import com.example.do_an.fragments.userFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+    private FirebaseAuth mAuth;
     BottomNavigationView mnBottom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         // load lên fragment
         mnBottom.setOnItemSelectedListener(getListener());
+
+        mAuth = FirebaseAuth.getInstance();
 
     }
 
