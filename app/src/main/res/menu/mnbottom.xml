@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/mnHome"
-        android:title="Home"
-        android:icon="@drawable/baseline_add_home_24"
-        />
-
-    <item
-        android:id="@+id/mnInfo"
-        android:title="Info"
-        android:icon="@drawable/baseline_account_box_24"
-        />
-
-    <item
-        android:id="@+id/mnSetting"
-        android:title="Setting"
-        android:icon="@drawable/baseline_app_settings_alt_24"
-        />
-
+    <item android:title="Food and Drink"
+        android:id="@+id/food"
+        android:icon="@drawable/food"/>
+    <item android:title="Share"
+        android:id="@+id/share"
+        android:icon="@drawable/share"/>
+    <item android:title="Setting"
+        android:id="@+id/setting"
+        android:icon="@drawable/other"/>
 </menu>
