@@ -13,12 +13,17 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.do_an.fragments.HomeFragment;
+import com.example.do_an.fragments.SettingFragment;
 import com.example.do_an.fragments.saveFragment;
+import com.example.do_an.fragments.shareFragment;
 import com.example.do_an.fragments.userFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+    private FirebaseAuth mAuth;
     BottomNavigationView mnBottom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         }
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
-        mnBottom = findViewById(R.id.navMenu);
+        mnBottom = findViewById(R.id.navBottom);
 
         //
         ActionBar actionBar = getSupportActionBar();
@@ -37,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
 
         // load lên fragment
         mnBottom.setOnItemSelectedListener(getListener());
+        // Load HomeFragment mặc định khi mở app
+        if (savedInstanceState == null) {
+            loadFragment(new HomeFragment());
+        }
+
+        mAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -57,20 +68,20 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fmNew;
 
-                if (item.getItemId() == R.id.mnHome) {
+                if (item.getItemId() == R.id.food) {
                     getSupportActionBar().setTitle(item.getTitle());
-                    fmNew = new userFragment();
+                    fmNew = new HomeFragment();
                     loadFragment(fmNew);
                     return true;
                 }
-                if (item.getItemId() == R.id.mnInfo) {
-                    getSupportActionBar().setTitle(item.getTitle());
-                    fmNew = new saveFragment();
-                    loadFragment(fmNew);
-                    return true;
-                }if (item.getItemId() == R.id.mnSetting) {
+                if (item.getItemId() == R.id.share) {
                     getSupportActionBar().setTitle(item.getTitle());
                     fmNew = new userFragment();
+                    loadFragment(fmNew);
+                    return true;
+                }if (item.getItemId() == R.id.setting) {
+                    getSupportActionBar().setTitle(item.getTitle());
+                    fmNew = new SettingFragment();
                     loadFragment(fmNew);
                     return true;
                 }
@@ -83,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     void loadFragment(Fragment fmNew)
     {
         FragmentTransaction fmTran = getSupportFragmentManager().beginTransaction();
-        fmTran.replace(R.id.main_fragment, fmNew);
+        fmTran.replace(R.id.fragmentContainer, fmNew);
         fmTran.addToBackStack(null);
         fmTran.commit();
     }

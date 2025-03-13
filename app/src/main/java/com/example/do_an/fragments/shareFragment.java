@@ -54,9 +54,6 @@ public class shareFragment extends Fragment {
         ListFood.add(new FoodItem("Món 1", "ngom quá dễ lamfdef", "cf-1.jpg"));
         ListFood.add(new FoodItem("Món 1", "ngom quá dễ lamfdef", "cf-1.jpg"));
 
-
-
-
     }
 
 
