@@ -25,7 +25,7 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         mnBottom = findViewById(R.id.navMenu);
 
         //
