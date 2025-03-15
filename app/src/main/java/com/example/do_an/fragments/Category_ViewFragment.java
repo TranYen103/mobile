@@ -17,31 +17,32 @@ import com.example.do_an.R;
 import java.util.ArrayList;
 
 
-public class HomeFragment extends Fragment {
-    RecyclerView rvsShare;
+public class Category_ViewFragment extends Fragment {
+    RecyclerView rvsCategory;
     FoodAdapter foodAdapter;
     ArrayList<FoodItem> ListFood;
 
 
-    public HomeFragment() {
+    public Category_ViewFragment() {
         // Required empty public constructor
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_category__view, container, false);
 
-        rvsShare = view.findViewById(R.id.rv_popular);
+        rvsCategory = view.findViewById(R.id.rcv_Category);
 
         LoadData();
 
-        rvsShare.setLayoutManager(new LinearLayoutManager(getContext()));
-        foodAdapter = new FoodAdapter(ListFood);
-        rvsShare.setAdapter(foodAdapter);
-
-        return  view;
+        rvsCategory.setLayoutManager(new LinearLayoutManager(getContext()));
+        foodAdapter= new FoodAdapter(ListFood);
+        rvsCategory.setAdapter(foodAdapter);
+        return view;
     }
     void LoadData()
     {
@@ -56,5 +57,4 @@ public class HomeFragment extends Fragment {
         ListFood.add(new FoodItem("Món 1", "ngom quá dễ lamfdef", "cf-1.jpg"));
 
     }
-
 }
