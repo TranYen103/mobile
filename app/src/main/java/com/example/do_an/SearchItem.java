@@ -1,7 +1,7 @@
 package com.example.do_an;
 
 public class SearchItem {
-    String foodName, foodTime;
+    String foodName;
     int img;
 
     public int getImg() {
@@ -12,13 +12,6 @@ public class SearchItem {
         this.img = img;
     }
 
-    public String getFoodTime() {
-        return foodTime;
-    }
-
-    public void setFoodTime(String foodTime) {
-        this.foodTime = foodTime;
-    }
 
     public String getFoodName() {
         return foodName;

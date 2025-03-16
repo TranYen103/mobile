@@ -1,17 +1,27 @@
 package com.example.do_an.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
+import com.example.do_an.FoodItem;
 import com.example.do_an.R;
+import com.example.do_an.SearchActivity;
+import com.example.do_an.adapter.FoodAdapter;
+
+import java.util.ArrayList;
 
 
 public class HomeFragment extends Fragment {
+    EditText  edtSearch;
     RecyclerView rvsShare;
     FoodAdapter foodAdapter;
     ArrayList<FoodItem> ListFood;
@@ -28,13 +38,17 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         rvsShare = view.findViewById(R.id.rv_popular);
+        edtSearch=view.findViewById(R.id.edtSearch);
 
         LoadData();
 
         rvsShare.setLayoutManager(new LinearLayoutManager(getContext()));
         foodAdapter = new FoodAdapter(ListFood);
         rvsShare.setAdapter(foodAdapter);
-
+        edtSearch.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), SearchActivity.class);
+            startActivity(intent);
+        });
         return  view;
     }
     void LoadData()

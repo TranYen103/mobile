@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.do_an.FoodAdapter;
+import com.example.do_an.adapter.FoodAdapter;
 import com.example.do_an.FoodItem;
 import com.example.do_an.R;
 
@@ -36,6 +36,7 @@ public class Category_ViewFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_category__view, container, false);
 
         rvsCategory = view.findViewById(R.id.rcv_Category);
+
 
         LoadData();
 
