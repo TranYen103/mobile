@@ -7,12 +7,22 @@ import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
-ImageView back;
+SearchView searchView;
+RecyclerView recyclerView;
+ArrayList<SearchItem> arrayList = new ArrayList<>();
+String[] foodList=new String[]{"Gà chiên mắm","Heo chiên giòn","Bò xào tỏi","Canh bí đỏ","Tôm hấp","Nui xào giòn"};
+String[] foodTime=new String[]{"20ph", "15ph", "10ph","25ph","5ph","12ph"};
+int[]imgList=new int[]{R.drawable.catergory_drinks,R.drawable.catergory_drinks,R.drawable.catergory_drinks,
+        R.drawable.catergory_drinks,R.drawable.catergory_drinks,R.drawable.catergory_drinks};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,16 +38,12 @@ ImageView back;
     }
 
     private void handleEvents() {
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(SearchActivity.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
     private void addControl() {
-        back=findViewById(R.id.back);
+    recyclerView=findViewById(R.id.recyclerView);
+    searchView=findViewById(R.id.searchView);
+
     }
 }
