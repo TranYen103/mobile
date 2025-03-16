@@ -43,7 +43,7 @@ public class shareFragment extends Fragment {
     void LoadData()
     {
         ListFood = new ArrayList<>();
-        ListFood.add(new FoodItem("Món 1", "ngom quá dễ lamfdef", "cf5.jpg"));
+        ListFood.add(new FoodItem("Món 1", "ngom quá dễ lamfdef", "cf-5.jpg"));
         ListFood.add(new FoodItem("Món 1", "ngom quá dễ lamfdef", "cf-1.jpg"));
         ListFood.add(new FoodItem("Món 1", "ngom quá dễ lamfdef", "cf-1.jpg"));
         ListFood.add(new FoodItem("Món 1", "ngom quá dễ lamfdef", "cf-1.jpg"));

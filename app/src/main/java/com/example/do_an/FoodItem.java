@@ -11,6 +11,11 @@ public class FoodItem {
         this.image = image;
     }
 
+    public FoodItem(String tittle, String image) {
+        this.tittle = tittle;
+        this.image = image;
+    }
+
     public String getTittle() {
         return tittle;
     }
