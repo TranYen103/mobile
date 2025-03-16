@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.do_an.fragments.HomeFragment;
 import com.example.do_an.fragments.SettingFragment;
@@ -22,7 +23,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 
+
 public class MainActivity extends AppCompatActivity {
+
     private FirebaseAuth mAuth;
     BottomNavigationView mnBottom;
     @Override
@@ -48,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mAuth = FirebaseAuth.getInstance();
+
+
+
+
 
     }
 

@@ -1,4 +1,4 @@
-package com.example.do_an;
+package com.example.do_an.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.do_an.FoodItem;
+import com.example.do_an.R;
+import com.example.do_an.Utils;
 
 import java.util.ArrayList;
 

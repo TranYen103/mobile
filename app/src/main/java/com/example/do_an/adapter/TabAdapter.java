@@ -1,4 +1,4 @@
-package com.example.do_an;
+package com.example.do_an.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -7,7 +7,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.do_an.fragments.saveFragment;
 import com.example.do_an.fragments.shareFragment;
-import com.example.do_an.fragments.userFragment;
 
 public class TabAdapter extends FragmentStateAdapter {
 

@@ -29,9 +29,9 @@
         app:srcCompat="@drawable/image_btm_overlay" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:id="@+id/back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/card_back_btn"
@@ -44,14 +44,30 @@
         app:layout_constraintTop_toTopOf="@+id/img_dish" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        android:id="@+id/edit"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="50dp"
+        android:clickable="true"
+        android:foregroundGravity="center"
+        android:hapticFeedbackEnabled="true"
+        android:padding="4dp"
+        android:src="@drawable/edit"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        android:src="@drawable/full_size_ic"
+        app:layout_constraintTop_toTopOf="@+id/back"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/back"
+        android:src="@drawable/delete"
+        android:layout_toEndOf="@+id/edit"
         android:padding="4dp"
         android:clickable="true"
         android:foregroundGravity="center"
@@ -75,7 +91,7 @@
             android:layout_marginEnd="45dp"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:textSize="20sp"
+           android:textSize="20sp"
             android:textColor="@color/black"
             android:text="Công thức gà xào sả ớt" />
         <ImageView
@@ -97,69 +113,33 @@
             android:layout_toEndOf="@+id/clock"
             android:text="30mins"
             android:layout_below="@+id/title"/>
-        <Button
-            android:id="@+id/ing"
-            android:layout_width="150dp"
-            android:layout_height="42sp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/title"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="30dp"
-            android:background="@drawable/btn_ing"
-            android:paddingLeft="20sp"
-            android:paddingRight="20sp"
-            android:text="Nguyên liệu"
-            />
-        <ScrollView
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ing"
-            android:layout_alignParentStart="true"
-            android:padding="10sp">
-            <TextView
-                android:id="@+id/ing_data"
-                android:layout_width="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_below="@+id/time">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:lineSpacingExtra="10dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:text=""/>
+                android:text="Nguyên liệu" />
 
-        </ScrollView>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bước" />
+        </com.google.android.material.tabs.TabLayout>
 
-        <Button
-            android:id="@+id/step"
-            android:layout_width="150dp"
-            android:layout_height="42sp"
-            android:background="@drawable/btn_ing"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/title"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="34dp"
-            android:layout_marginEnd="30dp"
-            android:paddingLeft="20sp"
-            android:paddingRight="20sp"
-            android:text="Bước"
-            />
-        <ScrollView
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/step"
-            android:layout_alignParentStart="true"
-            android:padding="10sp">
-            <TextView
-                android:id="@+id/step_data"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:lineSpacingExtra="10dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:text=""/>
-
-        </ScrollView>
-
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/tab_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

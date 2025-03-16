@@ -1,46 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
-
-    <EditText
-        android:id="@+id/search"
+<androidx.cardview.widget.CardView
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="20dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="5dp"
+    >
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/search_edit_background"
-        android:ems="10"
-        android:focusable="true"
-        android:hint="Tìm món ăn..."
-        android:inputType="textFilter"
-        android:paddingStart="48dp"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:queryHint="Nhập tên món ăn"/>
 
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/search"
-        app:layout_constraintTop_toTopOf="@+id/search"
-        app:srcCompat="@drawable/back_icon" />
-
+</androidx.cardview.widget.CardView>
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_margin="15dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search"
-        tools:listitem="@layout/search_rv"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/card"
+         />
+</RelativeLayout>
