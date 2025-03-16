@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.do_an.adapter.FoodAdapter;
 import com.example.do_an.fragments.Category_ViewFragment;
 
 import java.util.ArrayList;
