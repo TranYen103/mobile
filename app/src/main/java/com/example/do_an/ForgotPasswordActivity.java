@@ -20,6 +20,7 @@ private EditText edEmailForgot;
 private Button btnResetPassword;
 private ImageButton Back_ForgotPassword;
 private FirebaseAuth fbAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
