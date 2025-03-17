@@ -1,6 +1,5 @@
 package com.example.do_an.fragments;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,12 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.do_an.FoodAdapter;
+import com.example.do_an.adapter.FoodAdapter;
 import com.example.do_an.FoodItem;
 import com.example.do_an.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class shareFragment extends Fragment {

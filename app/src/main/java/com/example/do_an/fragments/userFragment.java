@@ -2,7 +2,6 @@ package com.example.do_an.fragments;
 
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -11,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.do_an.R;
-import com.example.do_an.TabAdapter;
+import com.example.do_an.adapter.TabAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 

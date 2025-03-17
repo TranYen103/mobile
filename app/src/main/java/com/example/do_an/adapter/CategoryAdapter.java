@@ -1,4 +1,4 @@
-package com.example.do_an;
+package com.example.do_an.adapter;
 
 public class CategoryAdapter {
 
