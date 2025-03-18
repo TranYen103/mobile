@@ -11,7 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 
+import com.example.do_an.CategoryActivity;
 import com.example.do_an.FoodItem;
 import com.example.do_an.R;
 import com.example.do_an.SearchActivity;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 
 
 public class HomeFragment extends Fragment {
+    ImageView img_main,img_salad,img_drink,img_desert;
     EditText  edtSearch;
     RecyclerView rvsShare;
     FoodAdapter foodAdapter;
@@ -39,7 +42,14 @@ public class HomeFragment extends Fragment {
 
         rvsShare = view.findViewById(R.id.rv_popular);
         edtSearch=view.findViewById(R.id.edtSearch);
-
+        img_main=view.findViewById(R.id.img_main);
+        img_drink=view.findViewById(R.id.img_drink);
+        img_salad=view.findViewById(R.id.img_salad);
+        img_desert=view.findViewById(R.id.img_desert);
+        img_main.setOnClickListener(v -> openRecipeList("Món chính"));
+        img_salad.setOnClickListener(v -> openRecipeList("Salad"));
+        img_drink.setOnClickListener(v -> openRecipeList("Đồ uống"));
+        img_desert.setOnClickListener(v -> openRecipeList("Tráng miệng"));
         LoadData();
 
         rvsShare.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -50,6 +60,11 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
         return  view;
+    }
+    private void openRecipeList(String category) {
+        Intent intent = new Intent(getActivity(), CategoryActivity.class);
+        intent.putExtra("category", category);
+        startActivity(intent);
     }
     void LoadData()
     {
