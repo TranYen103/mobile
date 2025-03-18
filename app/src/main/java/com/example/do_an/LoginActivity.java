@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -105,6 +106,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btn_Login);
         btn_Register = findViewById(R.id.btn_Register);
         tvForgotPassword = findViewById(R.id.QuenMatKhau);
+        tvForgotPassword.setPaintFlags(tvForgotPassword.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         btnFacebook = findViewById(R.id.btnFacebook);
 
         callbackManager = CallbackManager.Factory.create();
@@ -112,6 +114,8 @@ public class LoginActivity extends AppCompatActivity {
 
         btnBack.setOnClickListener(v -> finish());
         btnLogin.setOnClickListener(v -> LoginUser());
+
+
         tvForgotPassword.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
             startActivity(intent);

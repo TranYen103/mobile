@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#6FE5F5E6"
     tools:context=".CategoryActivity"
     >
 
@@ -21,7 +21,7 @@
         android:id="@+id/Toolbar_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ECE7E7"
+        android:background="#6FCDF1CF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,12 +31,13 @@
             android:layout_width="44dp"
             android:layout_height="44dp"
             android:src="@drawable/baseline_arrow_back_24"
-            android:backgroundTint="#ECE7E7"
+            android:backgroundTint="#6FE5F5E6"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Món chính"
+            android:textColor="@color/black"
             android:textSize="23sp"
             android:layout_marginStart="25dp"
             android:textStyle="bold"/>
