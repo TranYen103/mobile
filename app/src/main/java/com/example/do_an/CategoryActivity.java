@@ -30,6 +30,10 @@ public class CategoryActivity extends AppCompatActivity{
             getSupportActionBar().hide();
         }
         setContentView(R.layout.activity_category);
+        String category = getIntent().getStringExtra("category");
+        if (category == null) {
+            category = "Món chính"; // Mặc định nếu null
+        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -37,7 +41,7 @@ public class CategoryActivity extends AppCompatActivity{
         });
 
         toolbar = findViewById(R.id.Toolbar_category);
-
+        toolbar.setTitle(category);
        loadCategoryFragment();
 
 
@@ -46,7 +50,13 @@ public class CategoryActivity extends AppCompatActivity{
 
     }
     private void loadCategoryFragment() {
-        Fragment fragment = new Category_ViewFragment();
+        String category = getIntent().getStringExtra("category");
+
+        Bundle bundle = new Bundle();
+        bundle.putString("category", category);
+
+       Fragment fragment = new Category_ViewFragment();
+        fragment.setArguments(bundle);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.Frame_Category, fragment);
         transaction.commit();
