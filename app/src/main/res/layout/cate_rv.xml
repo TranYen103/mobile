@@ -76,6 +76,8 @@
         app:tint="#019267"
         app:srcCompat="@drawable/card_btn"
         tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="37dp" />
+        tools:layout_editor_absoluteY="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
